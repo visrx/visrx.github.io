@@ -31,11 +31,35 @@
         a:hover {
             text-decoration: underline;
         }
+        .hidden {
+            display: none;
+        }
+        footer {
+            text-align: center; 
+            margin-top: 20px;
+        }
+        #switchLangBtn {
+            /* center button */
+            display: block;
+            margin: 0 auto;
+
+            padding: 10px 20px;
+            background-color: #e48578;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #switchLangBtn:hover {
+            background-color: #c76a62;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>VisRx Privacy Policy</h1>
+
+<div id="en" class="container">
+ <h1>VisRx Privacy Policy</h1>
         <p>Welcome to VisRx! We value your privacy and are committed to protecting your personal information. This Privacy Policy is designed to transparently explain how we collect, use, and protect your information, as well as the rights you have.</p>
         
         <h2>Scope</h2>
@@ -70,6 +94,69 @@
         <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:visrx@outlook.com">visrx@outlook.com</a>.</p>
         
         <p>Thank you for choosing VisRx!</p>
+</div>
+
+<div id="zh" class="container hidden">
+<h1>药忆隐私政策</h1>
+        <p>欢迎使用药忆！我们重视您的隐私并致力于保护您的个人信息。本隐私政策旨在透明地解释我们如何收集、使用及保护您的信息，以及您所拥有的权利。</p>
+        
+        <h2>适用范围</h2>
+        <p>本隐私政策适用于药忆提供的所有服务，包括但不限于我们的网站、应用程序及其他平台。</p>
+        
+        <h2>信息的收集与使用</h2>
+        <h3>个人信息的收集</h3>
+        <p>我们收集的信息包括电子邮件地址、用户在账户注册时提供的信息，以及用户手动导入的如年龄、性别、血压（来自苹果健康App）以及用药信息等。</p>
+        
+        <h3>收集方式</h3>
+        <p>我们通过用户在账户注册期间提供的信息以及用户之后的手动导入来收集个人信息。</p>
+        
+        <h3>使用目的</h3>
+        <p>收集的信息主要用于提供服务，如用药提醒和指导等。</p>
+        
+        <h2>信息的共享与披露</h2>
+        <p>我们可能会与第三方大型模型提供者（如OpenAI）共享匿名用户信息和用药信息，用于计算目的以提供上述服务。除非法律要求，我们不会与其他第三方分享您的个人信息。</p>
+        
+        <h2>用户权利</h2>
+        <p>用户可以随时手动删除或更改导入的信息。如果您对管理个人信息有任何疑问，请通过 <a href="mailto:visrx@outlook.com">visrx@outlook.com</a> 与我们联系。</p>
+        
+        <h2>信息安全</h2>
+        <p>我们采用业界标准的数据加密和通信算法来保护您的个人信息安全，防止信息泄露、篡改或丢失。</p>
+        
+        <h2>儿童及未成年人保护</h2>
+        <p>我们建议成人使用我们的服务。未成年人使用应在监护人的监督下进行。我们不会故意收集未成年人的个人信息。</p>
+        
+        <h2>隐私政策的变更</h2>
+        <p>我们保留随时更新或修改本隐私政策的权利。任何更改将在我们的网站上发布，并在更改生效前通知用户。</p>
+        
+        <h2>联系我们</h2>
+        <p>如果您对本隐私政策有任何疑问，请通过 <a href="mailto:visrx@outlook.com">visrx@outlook.com</a> 与我们联系。</p>
+        
+        <p>感谢您选择药忆！</p>
     </div>
+</div>
+
+<footer>
+    <p><a href="http://beian.miit.gov.cn/" target="_blank">京ICP备2024062511号</a></p>
+</footer>
+
+<button id="switchLangBtn">中文</button>
+
+<script>
+    const switchLangBtn = document.getElementById('switchLangBtn');
+    const enContent = document.getElementById('en');
+    const zhContent = document.getElementById('zh');
+
+    switchLangBtn.addEventListener('click', function() {
+        if(enContent.classList.contains('hidden')) {
+            enContent.classList.remove('hidden');
+            zhContent.classList.add('hidden');
+            switchLangBtn.textContent = '中文';
+        } else {
+            enContent.classList.add('hidden');
+            zhContent.classList.remove('hidden');
+            switchLangBtn.textContent = 'English';
+        }
+    });
+</script>
 </body>
 </html>
